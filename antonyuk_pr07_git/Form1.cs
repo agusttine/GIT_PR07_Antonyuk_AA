@@ -16,5 +16,19 @@ namespace antonyuk_pr07_git
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLogin.Text) ||
+            string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("Введите логин и пароль.");
+                return;
+            }
+
+            FormAdmin adminForm = new FormAdmin();
+            adminForm.Show();
+            this.Hide();
+        }
     }
 }
